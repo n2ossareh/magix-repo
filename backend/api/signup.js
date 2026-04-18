@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
       email,
       password,
       options: {
-        emailRedirectTo: 'https://lagged-chlorine-tiger.ngrok-free.dev',
+        emailRedirectTo: 'https://glorious-winner-4pg44q9g5g4fq7qg-3000.app.github.dev',
       },
       email_confirm: true
     });
