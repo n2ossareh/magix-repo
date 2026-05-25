@@ -9,7 +9,9 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home</Text>
-      <Button title="Start 7×9 Exercises" onPress={() => navigation.navigate('Exercise')} />
+      {/* <Button title="Start 7×9 Exercises" onPress={() => navigation.navigate('Exercise')} /> */}
+      <Button title="Play" onPress={() => navigation.navigate("KidLogin")} />
+      <Button title="Addition" onPress={() => navigation.navigate("AddingTest")} />
       <Button title="Logout" onPress={logout} color="red" />
     </View>
   );

@@ -37,7 +37,9 @@ export default function RegisterScreen({ navigation }) {
   }
 
   return (
-    <View style={{ padding: 20 }}>
+    <View style={{ padding: 20 }}>  
+      <Text>Register Page</Text>
+    
       <TextInput placeholder="Email" value={email} onChangeText={setEmail} margin="20" autoCapitalize="none" />
       <TextInput placeholder="Password" value={password} onChangeText={setPassword} margin="20" secureTextEntry={false} />
       <Button title={loading ? "Registering..." : "Register"} onPress={handleRegister} />

@@ -6,27 +6,31 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ExerciseScreen from '../screens/ExerciseScreen';
+import KidLoginScreen from '../screens/KidLoginScreen';
+import AddingTestScreen from '../screens/AddingTestScreen';
 import { AuthContext } from '../context/AuthContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
-  const { user } = useContext(AuthContext);
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {user ? (
-        <>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Exercise" component={ExerciseScreen} />
-        </>
-      ) : (
-        <>
-          <Stack.Screen name="Landing" component={LandingScreen} />
-          <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="Register" component={RegisterScreen} />
-        </>
-      )}
-    </Stack.Navigator>
-  );
+    const { user } = useContext(AuthContext);
+    return (
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                {user ? (
+                    <>
+                        <Stack.Screen name="Home" component={HomeScreen} />
+                        <Stack.Screen name="KidLogin" component={KidLoginScreen} />
+                        <Stack.Screen name="AddingTest" component={AddingTestScreen} />
+                        <Stack.Screen name="Exercise" component={ExerciseScreen} />
+                    </>
+                    ) : (
+                           <>
+                               <Stack.Screen name="Landing" component={LandingScreen} />
+                               <Stack.Screen name="Login" component={LoginScreen} />
+                               <Stack.Screen name="Register" component={RegisterScreen} />
+                           </>
+                        )}
+            </Stack.Navigator>
+        );
 
 }

@@ -5,6 +5,10 @@ import {signup} from './api/signup.js'
 import {login} from './api/login.js'
 import {addProfile, getProfile} from './api/profiles.js'
 import {verifyToken} from './api/verifyToken.js'
+import addTestRoute from './api/routes/addTestRoute.js'
+import subtractTestRoute from './api/routes/subtractTestRoute.js'
+import multiplyTestRoute from './api/routes/multiplyTestRoute.js'
+import divideTestRoute from './api/routes/divideTestRoute.js' 
 
 dotenv.config()
 
@@ -20,6 +24,10 @@ app.use('/api/login', login)
 app.use('/api/getprofile', getProfile)
 app.use('/api/addprofile', addProfile)
 app.use('/api/verifyToken', verifyToken)
+app.use('/api', addTestRoute)
+app.use('/api', subtractTestRoute)
+app.use('/api', multiplyTestRoute)
+app.use('/api', divideTestRoute)
 
 app.get('/', (req, res) => {
   res.send('API is running');

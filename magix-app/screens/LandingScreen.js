@@ -14,9 +14,10 @@ export default function LandingScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text>Landing</Text>
       <Text style={styles.title}>Welcome to Magix!</Text>
-      <Button title="Register" onPress={() => navigation.navigate('Register')} />
       <Button title="Login" onPress={() => navigation.navigate('Login')} />
+      <Button title="Register" onPress={() => navigation.navigate('Register')} />
     </View>
   );
 

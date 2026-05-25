@@ -4,8 +4,8 @@ import { View, Text, TextInput, Button, StyleSheet, FlatList } from 'react-nativ
 
 export default function ExerciseScreen() {
   const [answers, setAnswers] = useState({});
-  const problems = Array.from({ length: 7 }, (_, i) => i + 1)
-    .flatMap((i) => Array.from({ length: 9 }, (_, j) => `${i}×${j + 1}`));
+  const problems = Array.from({ length: 3 }, (_, i) => i + 1)
+    .flatMap((i) => Array.from({ length: 3 }, (_, j) => `${i}×${j + 1}`));
 
   const handleChange = (problem, value) => {
     setAnswers({ ...answers, [problem]: value });

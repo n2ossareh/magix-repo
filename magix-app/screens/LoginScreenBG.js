@@ -16,8 +16,8 @@ import { KidLogin } from './KidLoginScreen';
 
 export default function LoginScreen( { navigation }) {
   const { login } = useContext(AuthContext)
-  const [email, setEmail] = useState('ossareh.n2@gmail.com')
-  const [password, setPassword] = useState('__na$$__')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
   const [loading, setLoading] = useState(false);
@@ -47,7 +47,10 @@ export default function LoginScreen( { navigation }) {
   }
 
   return (
-    
+    <ImageBackground
+      source={require('../assets/MathScreenShot.png')}
+      style={styles.background}
+      resizeMode="cover">
         <KeyboardAvoidingView
           style={styles.overlay}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
@@ -55,8 +58,8 @@ export default function LoginScreen( { navigation }) {
           
         <View style={{ padding: 20 }}>
           <Text style={StyleSheet.container}>Login Page</Text>
-          <TextInput value={email} placeholder="Email" margin="20" onChangeText={setEmail} autoCapitalize="none" />
-          <TextInput defaultValue="__na$$__"  placeholder="Password" value={password} onChangeText={setPassword} margin="20" secureTextEntry={false} />
+          <TextInput placeholder="Email" margin="20" value={email} onChangeText={setEmail} autoCapitalize="none" />
+          <TextInput placeholder="Password" value={password} onChangeText={setPassword} margin="20" secureTextEntry={false} />
           <Button title={loading ? "Logging in..." : "Login"} onPress={handleLogin} />
           <Button title="Back" onPress={() => navigation.navigate("Landing")} />
           <Button title="Play" onPress={() => navigation.navigate("KidLogin")} />
@@ -65,7 +68,7 @@ export default function LoginScreen( { navigation }) {
         </View>
       </KeyboardAvoidingView>
           
-    
+    </ImageBackground>
 
   );
 }
